@@ -21,8 +21,12 @@ form.addEventListener("submit", async (e) => {
     } else {
       createGallery(data.hits);
     }
-    } catch (error) {}
-    finally {
+    } catch (error) {
+  console.error(error); 
+  iziToast.error({
+    message: "Something went wrong. Please try again later!",
+    });
+  } finally {
     hideLoader();
   }
 });
